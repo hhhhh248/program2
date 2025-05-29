@@ -1,14 +1,18 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
+#include <string.h> //<--- strcmp í•¨ìˆ˜ ì‚¬ìš©ì„ ìœ„í•´ ì¶”ê°€ í•œë‹¤.Â 
 #include "contact.h"
+
+
 // IsEqualIcontact()
-// ¹ÝÈ¯°ª ¸¸¾à °°À¸¸é 1 (true) ¹ÝÈ¯, ±×·¸Áö ¾ÊÀ¸¸é 0À» ¹ÝÈ¯
-// ÀÔ·Â ºñ±³ÇÒ µÎ Contact °ª
+// 
+// ë°˜í™˜ê°’ ë§Œì•½ ê°™ìœ¼ë©´ 1 (true) ë°˜í™˜, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì„ ë°˜í™˜
+// ìž…ë ¥ ë¹„êµí•  ë‘ Contact ê°’
 int IsEqualIcontact(Contact a, Contact b)
 {
 
 	if (a.year == b.year && a.gender == b.gender &&
-		strcep(a.name, b.name) == 0 &&
-		strep(a.phone, b.phone) == 0)
+		strcmp(a.name, b.name) == 0 &&
+		strcmp(a.phone, b.phone) == 0)
 	{
 		return 1;
 	}
@@ -18,21 +22,43 @@ int IsEqualIcontact(Contact a, Contact b)
 
 void printContact(Contact c1)
 {
-	// ÀÌ¸§: 000
-	// Àü¹ø: 0000000000
-	// ¼ºº°: ³² È¤ ¿©
-	//¿¬µµ: 000
+	// ì´ë¦„: 000
+	// ì „ë²ˆ: 0000000000
+	// ì„±ë³„: ë‚¨ í˜¹ ì—¬
+	//ì—°ë„: 000
 
-	printf("ÀÌ¸§: %s \n", c1.name);
-	printf("Àü¹ø: %s \n",c1.phone);
-	printf("¼ºº°: %s \n" c1.gender == MAn ? "³²ÀÚ" : "¿©ÀÚ");
-	printf("¿¬µµ: %4d \n", c1.year);
-
-
-
+	printf("ì´ë¦„: %s \n", c1.name);
+	printf("ì „ë²ˆ: %s \n",c1.phone);
+	//printf("ì„±ë³„: %s \n",c1.gender == MAN ? "ë‚¨ìž" : "ì—¬ìž");
+	//printf("ì—°ë„: %4d \n", c1.year);
+	printf("ì„±ë³„:%d" ,c1.gender == MAN ? "ë‚¨ìž" : "ì—¬ìž")
 }
-int IsEqualIcontactptr(Contact a, Contact b)
-{
-	if (a->year == b=>year && a gender == b.gender &&
 
+
+int IsEqualContactPtr(Contact * a, Contact * b)
+{
+	if (a->year == b->year && a->gender == b->gender &&
+		strcmp(a->name, b->name) == 0 &&
+		strcmp(a->phone, b->phone) == 0)
+	{
+		return 1;
+	
+	}
+	else
+	{
+		return 0;	
+	}
+}
+
+void printContactPtr(Contact * c1)
+{
+	// ì´ë¦„: 000
+	// ì „ë²ˆ: 0000000000
+	// ì„±ë³„: ë‚¨ í˜¹ ì—¬
+	//ì—°ë„: 000
+
+	printf("ì´ë¦„: %s \n", c1->name);
+	printf("ì „ë²ˆ: %s \n", c1->phone);
+	printf("ì„±ë³„: %s \n", c1->gender == MAN ? "ë‚¨ìž" : "ì—¬ìž");
+	printf("ì—°ë„: %4d \n", c1->year);
 }
