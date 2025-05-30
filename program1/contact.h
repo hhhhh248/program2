@@ -9,8 +9,8 @@ typedef enum gender EGender;
 struct contact {
 	char name[24];
 	char phone[24];
+	EGender gender; 
 	int year;
-	EGender gender;
 };
 
 typedef struct contact Contact;

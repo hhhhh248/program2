@@ -28,11 +28,11 @@ void printContact(Contact c1)
 	//연도: 000
 
 	printf("이름: %s \n", c1.name);
-	printf("전번: %s \n",c1.phone);
-	//printf("성별: %s \n",c1.gender == MAN ? "남자" : "여자");
-	//printf("연도: %4d \n", c1.year);
-	printf("성별:%d" ,c1.gender == MAN ? "남자" : "여자")
-}
+	printf("전번: %s \n", c1.phone);
+	printf("성별: %s \n",c1.gender == MAN ? "남자" : "여자");
+	printf("연도: %d \n", c1.year);
+	
+};
 
 
 int IsEqualContactPtr(Contact * a, Contact * b)
@@ -60,5 +60,5 @@ void printContactPtr(Contact * c1)
 	printf("이름: %s \n", c1->name);
 	printf("전번: %s \n", c1->phone);
 	printf("성별: %s \n", c1->gender == MAN ? "남자" : "여자");
-	printf("연도: %4d \n", c1->year);
+	printf("연도: %d \n", c1->year);
 }
